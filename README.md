@@ -19,7 +19,8 @@ The generated backend project will have this folder structure.
   +  package.json  
   +  package-lock.json 
   + ├── config
-    + generateToken.js 
+    + generateToken.js
+    + db.js
        
   + ├── controllers 
     + authController.js 
