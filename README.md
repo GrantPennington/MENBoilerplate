@@ -4,28 +4,28 @@ This is intended to be used for a MERN full-stack application, but it can be edi
 
 ### Folder Structure
 The generated backend project will have this folder structure.
-.__
-└───backend__
-    ├── .env__
-    ├── server.js__
-    ├── package.json__
-    ├── package-lock.json__
-    │__   
-    ├───config__
-    │   └──  generateToken.js__
-    │__       
-    ├───controllers__
-    │   └──  authController.js__
-    │__       
-    ├───middleware__
-    │   ├──  authMiddleware.js__
-    │   └──  errorHandler.js__
-    │__       
-    ├───models__
-    │   └──  userModel.js__
-    │__       
-    └───routes__
-        └──  authRoutes.js__
+. \
+└───backend \
+    ├── .env \
+    ├── server.js \
+    ├── package.json \
+    ├── package-lock.json \
+    │   \
+    ├───config \
+    │   └──  generateToken.js \
+    │   \   
+    ├───controllers \
+    │   └──  authController.js \
+    │   \
+    ├───middleware \
+    │   ├──  authMiddleware.js \
+    │   └──  errorHandler.js  \
+    │       \
+    ├───models  \
+    │   └──  userModel.js \
+    │       \
+    └───routes \
+        └──  authRoutes.js \
 
 ##### The entry point to the application is server.js
 The batch script should be called from the command line inside the directory you want to create your boilerplate.
