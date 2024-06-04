@@ -61,6 +61,7 @@ if %auth_type%=="user" (
 
     if %db_type%=="mongo" (
         call :generateUserModel
+        call :generateDbConfig
     )
 )
 call :generateServerSourceFile
@@ -93,6 +94,31 @@ REM Generate .env file
     echo DB_HOST=
     echo DB_URI=
 ) >> .\backend\.env
+GOTO:EOF
+
+:generateDbConfig
+echo "Generating database config file -- .\config\db.js"
+REM Generate database config file
+(
+    echo const mongoose = require('mongoose'^);
+    echo const colors = require('colors'^);
+    echo require('dotenv'^).config(^);
+    echo.
+    echo const connectDB = async (^) =^> ^{
+    echo     try ^{
+    echo         const conn = await mongoose.connect(process.env.DB_URI, ^{
+    echo             dbName: process.env.DB_NAME,
+    echo         ^}^);
+    echo.
+    echo         console.log(`^MongoDB Connected: $^{conn.connection.host^}^`.cyan.underline^);
+    echo     ^} catch(err^) ^{
+    echo         console.log(`^Error: $^{err.message^}^`.red.bold^);
+    echo         process.exit(1^);
+    echo     ^}
+    echo ^};
+    echo.
+    echo module.exports = connectDB;
+) >> .\backend\config\db.js
 GOTO:EOF
 
 :generateGenerateToken
