@@ -1,4 +1,33 @@
 # Boilerplate Generation script for MEN (mongdb, express, node) backend
+create_node.bat is a batch script that generates an MVC style folder structure for a node express backend project.
+This is intended to be used for a MERN full-stack application, but it can be edited to use any database configuration.
+
+### Folder Structure
+The generated backend project will have this folder structure.
+.
+└───backend
+    ├── .env
+    ├── server.js
+    ├── package.json
+    ├── package-lock.json
+    │   
+    ├───config
+    │   └──  generateToken.js
+    │       
+    ├───controllers
+    │   └──  authController.js
+    │       
+    ├───middleware
+    │   ├──  authMiddleware.js
+    │   └──  errorHandler.js
+    │       
+    ├───models
+    │   └──  userModel.js
+    │       
+    └───routes
+        └──  authRoutes.js
+
+##### The entry point to the application is server.js
 The batch script should be called from the command line inside the directory you want to create your boilerplate.
 
 ### Usage
